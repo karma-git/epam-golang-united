@@ -1,9 +1,15 @@
-> branches NOTE:
->
-> master - default repo in original repo
-> 
-> main - is mine implementation of this course
-> 
-> hw-template - branch you need to 'checkout' from before homework execution
+# Overview
 
-WIP
+[Golang United School 2022](https://community-z.com/events/golang-united-school)
+
+0. Introduction to the Course
+1. Basic syntax constructions 
+2. Memory model 
+3. Data structures 
+4. Bytes, Runes, Strings & Error 
+5. Structures & Methods 
+6. Interfaces & OOP paradigm 
+7. IO, OS, Context 
+8. Databases 
+9. Web programming 
+10. Concurrency
