@@ -2,6 +2,8 @@
 
 [Golang United School 2022](https://community-z.com/events/golang-united-school)
 
+:books: [Learning Plan](./learning-plan.md)
+
 0. Introduction to the Course
 1. Basic syntax constructions 
 2. Memory model 
