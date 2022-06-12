@@ -39,10 +39,19 @@ class Cache:
 
 def main() -> None:
     c = Cache()
+
+    # initialize objects and to bucket
     obj1 = new_object("foo", "bar", datetime.fromisoformat("2021-05-05"))
+    obj2 = new_object("foo2", "baz", datetime.fromisoformat("2099-05-05"))
+    obj3 = new_object("spam", "eggs")
     c.put(obj1)
-    print(c.keys())
-    print(c)
+    c.put(obj2)
+    c.put(obj3)
+
+    print(f"Print all not expired keys from the bucket: {c.keys()}")
+    print(f"Print all keys from the bucket: {c}")
+
+    print(c.get("foo"), c.get("foo2"), c.get("spam"))  # foo shouldn't return
 
 
 if __name__ == "__main__":
