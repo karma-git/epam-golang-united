@@ -2,13 +2,15 @@ from typing import Any
 from datetime import datetime
 
 
-def new_object(key: str, value: Any, deadline: None | datetime = None) -> dict:
-    return {key: {"value": value, "deadline": deadline}}
-
-
 class Cache:
     def __init__(self) -> None:
         self._bucket = {}
+
+    @staticmethod
+    def new_cache_object(
+        key: str, value: Any, deadline: None | datetime = None
+    ) -> dict:
+        return {key: {"value": value, "deadline": deadline}}
 
     def _is_expired(self, obj: dict) -> bool:
         if obj.get("deadline") is None:
@@ -41,9 +43,9 @@ def main() -> None:
     c = Cache()
 
     # initialize objects and to bucket
-    obj1 = new_object("foo", "bar", datetime.fromisoformat("2021-05-05"))
-    obj2 = new_object("foo2", "baz", datetime.fromisoformat("2099-05-05"))
-    obj3 = new_object("spam", "eggs")
+    obj1 = Cache.new_cache_object("foo", "bar", datetime.fromisoformat("2021-05-05"))
+    obj2 = Cache.new_cache_object("foo2", "baz", datetime.fromisoformat("2099-05-05"))
+    obj3 = Cache.new_cache_object("spam", "eggs")
     c.put(obj1)
     c.put(obj2)
     c.put(obj3)
